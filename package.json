@@ -2,15 +2,20 @@
   "name": "change-case",
   "displayName": "Change case",
   "description": "Форматирует выделенный фрагмент в PascalCase или snake_case",
+  "publisher": "Tepr007",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.140.0"
+  },
+  "repository": { 
+    "type": "git", 
+    "url": "https://github.com/Tepr007/Change-case" 
   },
   "categories": [
     "Other"
   ],
   "activationEvents": [],
-  "main": "./src/extension.ts",
+  "main": "./out/extension.js",
   "contributes": {
     "commands": [
       {
