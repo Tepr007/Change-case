@@ -1,0 +1,7 @@
+{
+  "entryPoints": ["src/extension.ts"],
+  "out": "docs",
+  "plugin": ["typedoc-plugin-markdown"],
+  "readme": "none",
+  "excludePrivate": true
+}

@@ -1,7 +1,7 @@
 {
-  "name": "google-code-style-plugin",
-  "displayName": "Google code style plugin",
-  "description": "Переписывает код в соответствии с Google code style",
+  "name": "change-case",
+  "displayName": "Change case",
+  "description": "Форматирует выделенный фрагмент в PascalCase или snake_case",
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.140.0"
@@ -10,12 +10,30 @@
     "Other"
   ],
   "activationEvents": [],
-  "main": "./out/extension.js",
+  "main": "./src/extension.ts",
   "contributes": {
     "commands": [
       {
-        "command": "google-code-style-plugin.helloWorld",
-        "title": "Hello World"
+        "command": "change-case.to_snake_case",
+        "title": "change to snake_case"
+      },
+      {
+        "command": "change-case.to_PascalCase",
+        "title": "change to PascalCase"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "change-case.to_snake_case",
+        "key": "ctrl+alt+d",
+        "mac": "cmd+alt+d",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "change-case.to_PascalCase",
+        "key": "ctrl+alt+u",
+        "mac": "cmd+alt+u",
+        "when": "editorTextFocus"
       }
     ]
   },
@@ -28,14 +46,16 @@
     "test": "vscode-test"
   },
   "devDependencies": {
-    "@types/vscode": "^1.140.0",
     "@types/mocha": "^10.0.10",
     "@types/node": "24.x",
-    "typescript-eslint": "^8.61.1",
-    "eslint": "^10.5.0",
-    "typescript": "^6.0.3",
+    "@types/vscode": "^1.140.0",
     "@vscode/test-cli": "^0.0.15",
-    "@vscode/test-electron": "^3.0.0"
+    "@vscode/test-electron": "^3.0.0",
+    "eslint": "^10.5.0",
+    "typedoc": "^0.28.20",
+    "typedoc-plugin-markdown": "^4.14.0",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.61.1"
   },
   "overrides": {
     "diff": "^8.0.4",
